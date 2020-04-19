@@ -28,9 +28,9 @@ public class Controller extends Application {
 
     @POST
     @Path("laar/ingest")
-    @Consumes(MediaType.APPLICATION_JSON)
-    public Response ingestLogs(@PathParam("MeuArquivoPDF")String str) {
-        System.out.println(str);
+    @Consumes(MediaType.TEXT_PLAIN)
+    public Response ingestLogs(String str) {
+        service.record(str);
         return Response.status(200).build();
     }
 
