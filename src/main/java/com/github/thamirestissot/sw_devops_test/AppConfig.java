@@ -1,6 +1,8 @@
 package com.github.thamirestissot.sw_devops_test;
 
 import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
+import com.github.thamirestissot.sw_devops_test.controller.Metrics;
+import com.github.thamirestissot.sw_devops_test.service.Processor;
 import org.apache.cxf.bus.spring.SpringBus;
 import org.apache.cxf.endpoint.Server;
 import org.apache.cxf.jaxrs.JAXRSServerFactoryBean;
@@ -33,8 +35,8 @@ public class AppConfig {
     }
 
     @Bean
-    public Controller controller() {
-        return new Controller();
+    public Metrics controller() {
+        return new Metrics();
     }
 
     @Bean

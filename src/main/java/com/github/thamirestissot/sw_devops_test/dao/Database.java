@@ -1,5 +1,6 @@
-package com.github.thamirestissot.sw_devops_test;
+package com.github.thamirestissot.sw_devops_test.dao;
 
+import com.github.thamirestissot.sw_devops_test.Access;
 import org.influxdb.InfluxDB;
 import org.influxdb.InfluxDBFactory;
 import org.influxdb.dto.BatchPoints;
@@ -7,10 +8,10 @@ import org.influxdb.dto.Point;
 
 import java.util.concurrent.TimeUnit;
 
-public class DAO {
+public class Database {
     private InfluxDB influxDB;
 
-    public DAO(String databaseURL, String userName, String password) {
+    public Database(String databaseURL, String userName, String password) {
         this.influxDB = InfluxDBFactory.connect(databaseURL, userName, password);
     }
 

@@ -1,19 +1,19 @@
-package com.github.thamirestissot.sw_devops_test;
+package com.github.thamirestissot.sw_devops_test.service;
 
-import com.github.thamirestissot.sw_devops_test.service.DataRefiner;
+import com.github.thamirestissot.sw_devops_test.Access;
+import com.github.thamirestissot.sw_devops_test.dao.Database;
 
-import java.sql.Timestamp;
 import java.util.List;
 
 public class Processor {
     private SettingsReader settingsReader;
-    private DAO database;
+    private Database database;
 
     public void record(String rawData) {
         settingsReader = new SettingsReader();
 
         List<Access> accesses = DataRefiner.refineData(rawData);
-        database = new DAO (settingsReader.getDbURL(), settingsReader.getDbUser(), settingsReader.getDbPassword());
+        database = new Database(settingsReader.getDbURL(), settingsReader.getDbUser(), settingsReader.getDbPassword());
 
         accesses.forEach(access -> database.insert(settingsReader.getDbName(), settingsReader.getDbMeasurements(), access));
     }

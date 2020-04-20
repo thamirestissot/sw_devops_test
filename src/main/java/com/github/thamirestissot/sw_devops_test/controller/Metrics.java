@@ -1,6 +1,7 @@
-package com.github.thamirestissot.sw_devops_test;
+package com.github.thamirestissot.sw_devops_test.controller;
 
 
+import com.github.thamirestissot.sw_devops_test.service.Processor;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.ws.rs.*;
@@ -9,7 +10,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 @ApplicationPath("/")
-public class Controller extends Application {
+public class Metrics extends Application {
     @Autowired
     private Processor processor;
 

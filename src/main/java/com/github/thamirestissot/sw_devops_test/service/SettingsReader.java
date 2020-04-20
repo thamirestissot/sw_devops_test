@@ -1,4 +1,4 @@
-package com.github.thamirestissot.sw_devops_test;
+package com.github.thamirestissot.sw_devops_test.service;
 
 import com.github.thamirestissot.sw_devops_test.exceptions.CannotReadConfigurationFileException;
 
