@@ -19,7 +19,7 @@ public class SettingsReader {
         Properties properties = new Properties();
 
         try {
-            FileInputStream fileInputStream = new FileInputStream(System.getProperty("user.dir") + "src/main/resources/config.properties");
+            FileInputStream fileInputStream = new FileInputStream("src/main/resources/config.properties");
             properties.load(fileInputStream);
             dbURL = properties.getProperty("db.URL");
             dbUser = properties.getProperty("db.username");

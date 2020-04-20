@@ -38,7 +38,7 @@ public class AppConfig {
     }
 
     @Bean
-    public Service service() {
-        return new Service();
+    public Processor service() {
+        return new Processor();
     }
 }

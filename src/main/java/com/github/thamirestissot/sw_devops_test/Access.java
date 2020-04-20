@@ -3,11 +3,11 @@ package com.github.thamirestissot.sw_devops_test;
 public class Access {
 
     private String url;
-    private Long date;
+    private String date;
     private String uuid;
     private String regionCode;
 
-    public Access(String url, Long date, String uuid, String regionCode) {
+    public Access(String url, String date, String uuid, String regionCode) {
         this.url = url;
         this.date = date;
         this.uuid = uuid;
@@ -18,7 +18,7 @@ public class Access {
         return url;
     }
 
-    public Long getDate() {
+    public String getDate() {
         return date;
     }
 

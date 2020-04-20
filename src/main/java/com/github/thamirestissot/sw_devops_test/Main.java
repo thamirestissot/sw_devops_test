@@ -10,7 +10,7 @@ import org.springframework.web.context.support.AnnotationConfigWebApplicationCon
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        Server server = new Server(9000);
+        Server server = new Server(3000);
 
         final ServletHolder servletHolder = new ServletHolder(new CXFServlet());
         final ServletContextHandler context = new ServletContextHandler();

@@ -1,20 +1,17 @@
 package com.github.thamirestissot.sw_devops_test;
 
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.Application;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.io.IOException;
-import java.io.InputStream;
 
 @ApplicationPath("/")
 public class Controller extends Application {
     @Autowired
-    private Service service;
+    private Processor processor;
 
     @GET
     @Path("laaa/health")
@@ -30,7 +27,7 @@ public class Controller extends Application {
     @Path("laar/ingest")
     @Consumes(MediaType.TEXT_PLAIN)
     public Response ingestLogs(String str) {
-        service.record(str);
+        processor.record(str);
         return Response.status(200).build();
     }
 

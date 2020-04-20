@@ -19,7 +19,7 @@ public class DAO {
 
         Point point = Point
                 .measurement(measurements)
-                .time(access.getDate(), TimeUnit.MILLISECONDS)
+                .time(Long.parseLong(access.getDate()), TimeUnit.MILLISECONDS)
                 .tag("url", String.valueOf(access.getUrl()))
                 .addField("uuid", access.getUuid())
                 .addField("regionCode", access.getRegionCode())
