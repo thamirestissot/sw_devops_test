@@ -40,7 +40,7 @@ public class AppConfig {
     }
 
     @Bean
-    public Processor service() {
+    public Processor processor() {
         return new Processor();
     }
 }
