@@ -17,9 +17,9 @@ public class Metrics extends Application {
     @GET
     @Path("laaa/health")
     public Response health() {
-        try{
+        try {
             return Response.status(200).build();
-        }catch (Exception e){
+        } catch (Exception e) {
             return Response.status(500).build();
         }
     }
@@ -32,11 +32,14 @@ public class Metrics extends Application {
         return Response.status(200).build();
     }
 
-//    @GET
-//    @Produces("application/json")
-//    @Path("laa/metrics")
-//    public Response listPrices() throws RuntimeException {
-////        Map<String, Double> validVehiclesNamesWithRate = (Map<String, Double>) service.getVehicles().stream().collect(Collectors.toMap(key -> key.getClass().getSimpleName(), Vehicle::getTollPrice));
-////        return Response.ok(new ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(validVehiclesNamesWithRate)).build();
-//    }
+    @GET
+    @Path("laa/metrics/top3url")
+    @Produces("application/json")
+    public Response metrics() {
+        return Response.status(200)
+                .type(MediaType.APPLICATION_JSON_TYPE)
+                .entity(processor.generatesMetricTop3UrlAccessed())
+                .build();
+    }
+
 }

@@ -17,4 +17,8 @@ public class Processor {
 
         accesses.forEach(access -> database.insert(settingsReader.getDbName(), settingsReader.getDbMeasurements(), access));
     }
+
+    public String generatesMetricTop3UrlAccessed() {
+        return database.getTop3UrlAccessed(settingsReader.getDbName(),settingsReader.getDbMeasurements());
+    }
 }
